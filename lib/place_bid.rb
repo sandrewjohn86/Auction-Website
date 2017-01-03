@@ -7,6 +7,11 @@ class PlaceBid
 
 	def execute
 		@auction = Auction.find @auction_id
+
+		if @value <= @auction.current_bid
+			return false
+		end
+
 		@bid = @auction.bids.build value: @value, user_id: @user_id
 
 		if @bid.save

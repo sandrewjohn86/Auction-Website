@@ -22,6 +22,16 @@ class PlaceBidTest < MiniTest::Test
 	end
 
 	def test_fails_to_place_bid_under_current_value
-		
+		service = PlaceBid.new(
+			value: 9,
+			user_id: @another_user.id,
+			auction_id: @auction.id 
+		)
+
+		refute service.execute, "Bid should not be placed"
 	end
+
+	private
+
+	attr_reader :user, :another_user, :product, :auction
 end
