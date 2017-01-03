@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AuctionIt</title>
-    <%= csrf_meta_tags %>
+	<head>
+	    <title>AuctionIt</title>
+	    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
 
-  <body>
-    <%= yield %>
-  </body>
+	<body>
+	  	<%= render "nav" %>
+	  	<div class="container">
+	  		<%= content_tag :div, alert, class: "flash bg-danger" if alert %>
+	  		<%= content_tag :div, notice, "flash bg-success" if notice %>
+	    	<%= yield %>
+	    </div>
+	</body>
 </html>
