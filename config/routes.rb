@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   
   resources :products do
   	resources :auctions, only: [:create] do
-  		resources :bids, only: [ :create ]
+  		resources :bids, only: [:create]
   	end
   end
 
-  
+  #products_auctions_bids_path(@product, @auction, @bid)  
   root 'products#index'
+  
 end

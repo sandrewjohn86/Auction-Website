@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103024945) do
+ActiveRecord::Schema.define(version: 20170103175826) do
 
   create_table "auctions", force: :cascade do |t|
     t.float    "value"
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "ends_at"
     t.index ["product_id"], name: "index_auctions_on_product_id"
   end
 

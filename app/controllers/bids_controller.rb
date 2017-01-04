@@ -1,4 +1,5 @@
 require 'place_bid'
+
 class BidsController < ApplicationController
 	def create
 		service = PlaceBid.new bid_params
