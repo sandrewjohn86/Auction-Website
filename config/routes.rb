@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   	resources :auctions, only: [:create] do
   		resources :bids, only: [:create]
   	end
-  end
+    member do
+      put :transfer
+    end
 
-  #products_auctions_bids_path(@product, @auction, @bid)  
+  end
+ 
   root 'products#index'
   
 end
