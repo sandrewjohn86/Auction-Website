@@ -1,4 +1,6 @@
 class PlaceBid
+	attr_reader :auction
+	
 	def initialize options
 		@value = options[:value].to_f
     	@user_id = options[:user_id].to_i
